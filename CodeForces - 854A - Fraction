@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,t;
+
+    cin>>t;
+
+    a = t / 2;
+
+    for(int i = a; i < t; i++)
+    {
+        b = t - i;
+
+        c = __gcd(i,b);
+
+        if(c == 1)
+        {
+            if(i > b)
+                swap(i,b);
+
+            cout<<i<<" "<<b<<endl;
+            break;
+        }
+    }
+}
