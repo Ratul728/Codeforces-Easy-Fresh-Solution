@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    stack<char> m,f;
+    string s;
+
+    getline(cin, s);
+
+    for(int i = 0; i < s.size(); i++)
+    {
+        if(m.empty())
+            m.push(s[i]);
+        else if(m.top() == s[i])
+        {
+            m.pop();
+        }
+        else
+            m.push(s[i]);
+    }
+
+    while(!m.empty())
+    {
+        f.push(m.top());
+        m.pop();
+    }
+    while(!f.empty())
+    {
+        cout<<f.top();
+        f.pop();
+    }
+}
