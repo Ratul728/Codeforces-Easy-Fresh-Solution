@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+vector < int > a;
+
+int main()
+{
+    int t,b,m = 0,n = 0;
+    int a[105];
+
+    cin>>t;
+
+    for(int i = 0; i < t; i++)
+    {
+        cin>>a[i];
+
+        if(m < a[i])
+            m = a[i];
+    }
+
+    for(int i = 0; i < t; i++)
+    {
+        n += m - a[i];
+    }
+
+    cout<<n<<endl;
+
+
+
+
+
+
+    return 0;
+
+}
