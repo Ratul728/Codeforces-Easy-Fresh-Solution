@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    map<char, bool> m;
+
+    int t,cnt = 0;
+    char i;
+    string c;
+
+    for(i = 'a'; i <= 'z'; i++)
+    {
+        m[i] = true;
+    }
+
+    cin>>t;
+    cin>>c;
+
+    for(int j = 0; j < t; j++)
+    {
+        if(m[c[j]])
+            m[c[j]] = false;
+        else
+            cnt++;
+    }
+
+    if(t <= 26)
+        cout<<cnt<<endl;
+    else
+        cout<<"-1"<<endl;
+}
