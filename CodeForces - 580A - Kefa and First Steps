@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,s = 0, m = 0, t;
+
+    vector<int> v;
+
+    v.push_back(-1);
+
+    cin>>t;
+
+    for(int i = 1; i <= t; i++)
+    {
+        cin>>a;
+
+        if(v[i - 1] > a)
+            s = 1;
+        else
+            s++;
+
+        if(s > m)
+            m = s;
+
+        v.push_back(a);
+    }
+
+    cout<<m<<endl;
+
+}
