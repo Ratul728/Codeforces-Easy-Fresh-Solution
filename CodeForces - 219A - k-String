@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a, d = 0;
+
+    bool b = true;
+
+    map <char, int> v;
+
+    for(char c = 'a'; c <= 'z'; c++)
+    {
+        v[c] = 0;
+    }
+
+    string s, m;
+
+    cin>>a>>s;
+
+    for(int i = 0; i < s.size(); i++)
+    {
+        v[s[i]]++;
+    }
+
+    for(char c = 'a'; c <= 'z'; c++)
+    {
+        int j = v[c];
+
+        int k = j / a;
+
+        if(j % a != 0 && j > 0)
+        {
+            b = false;
+            break;
+        }
+
+        else if(j > 0)
+        {
+            for(int i = 0; i < k; i++)
+                m += c;
+        }
+    }
+
+    if(b)
+    {
+        for(int i =0; i < a; i++)
+        {
+            cout<<m;
+        }
+    }
+    else
+        cout<<"-1";
+
+    cout<<endl;
+}
