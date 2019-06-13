@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a, t;
+
+    set<int> s;
+
+    vector <int> v;
+
+    cin>>t;
+
+    for(int i = 0; i < t; i++)
+    {
+        cin>>a;
+
+        s.insert(a);
+    }
+
+    if(s.size() > 3)
+        cout<<"-1"<<endl;
+
+    else
+    {
+        for(auto it = s.begin(); it != s.end(); it++)
+            v.push_back(*it);
+
+        if(v.size() == 3)
+        {
+            if(v[1] - v[0] == v[2] - v[1])
+                cout<<v[1] - v[0]<<endl;
+            else
+                cout<<"-1"<<endl;
+        }
+        else if(v.size() == 2)
+        {
+            if((v[0] + v[1]) % 2 == 0)
+                cout<<((v[0] + v[1]) / 2) - v[0]<<endl;
+            else
+                cout<<v[1] - v[0]<<endl;
+        }
+        else
+            cout<<"0"<<endl;
+
+    }
+}
