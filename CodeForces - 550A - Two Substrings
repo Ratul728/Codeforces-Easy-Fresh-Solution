@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    bool a = false, b = false;
+
+    string s;
+
+    cin>>s;
+
+    for(int i = 0; i < s.size() - 1; i++)
+    {
+        if(s[i] == 'A' && s[i + 1] == 'B' && !a)
+        {
+            a = true;
+            i++;
+        }
+
+        else if(s[i] == 'B' && s[i + 1] == 'A' && a)
+        {
+            b = true;
+
+            break;
+        }
+    }
+
+    if(a && b)
+    {
+        cout<<"YES"<<endl;
+        return 0;
+    }
+    else
+    {
+        a = false;
+        b = false;
+    }
+
+    for(int i = 0; i < s.size() - 1; i++)
+    {
+        if(s[i] == 'B' && s[i + 1] == 'A' && !a)
+        {
+            a = true;
+            i++;
+        }
+
+        else if(s[i] == 'A' && s[i + 1] == 'B' && a)
+        {
+            b = true;
+
+            break;
+        }
+    }
+
+    if(a && b)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+}
