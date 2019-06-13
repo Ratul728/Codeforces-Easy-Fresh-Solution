@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+const int N = 1000006;
+
+vector<long long int> prime;
+vector<bool> isprime(N, true);
+map<long long int, long long int> ma;
+map<long long int, long long int> :: iterator it;
+
+
+void seive()
+{
+    isprime[0]= isprime[1] = false;
+
+    ma[4] = 2;
+
+    prime.push_back(4);
+
+    for(long long int i = 4; i <= N; i+= 2)
+    {
+        isprime[i] = false;
+    }
+    for(long long int i = 3; i<= sqrt(N); i+= 2)
+    {
+        if(isprime[i])
+        {
+            for(int j = i * i; j <= N; j += 2*i)
+            {
+                isprime[j] = false;
+            }
+        }
+    }
+
+    for(long long int i = 3; i<= N; i+= 2)
+    {
+        if(isprime[i])
+            ma[i * i] = i;
+    }
+}
+
+
+int main()
+{
+    seive();
+
+    int t;
+    long long int a;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>a;
+
+        if(isprime[ma[a]])
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+}
