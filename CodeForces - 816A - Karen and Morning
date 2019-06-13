@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int m,a,b,c,d, sum = 0;
+
+    string s;
+
+    cin>>s;
+
+    a = s[0] - '0';
+
+    b = s[1] - '0';
+
+    m = (a * 10) + b;
+
+    c = s[3] - '0';
+
+    m = ( m * 10) + c;
+
+    d = s[4] - '0';
+
+    m = ( m * 10) + d;
+
+    while(1)
+    {
+
+        if(m == 2359)
+        {
+            sum++;
+            cout<<sum<<endl;
+            break;
+        }
+        int k = m;
+
+        a = k % 10;
+
+        k /= 10;
+
+        b = k % 10;
+
+        k /= 10;
+
+        c = k % 10;
+
+        k /= 10;
+
+        d = k;
+
+        if(d == a && c == b)
+        {
+            cout<<sum<<endl;
+            break;
+        }
+
+        sum++;
+        m++;
+
+        k = m;
+
+        a = k % 10;
+
+        k /= 10;
+
+        b = (k % 10) * 10 + a;
+
+        if(b > 59)
+            m += 40;
+    }
+
+}
