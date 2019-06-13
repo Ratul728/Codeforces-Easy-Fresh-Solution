@@ -1,0 +1,77 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main( )
+{
+    int a[105], b = -1,c,s,t;
+
+    cin>>t;
+
+    for(int i =0; i < t; i++)
+    {
+        cin>>a[i];
+
+        if(a[i] > 0)
+            b = i;
+
+        if(a[i] < 0)
+            c = i;
+    }
+
+    if(b >= 0)
+    {
+        cout<<"1 "<<a[c]<<endl;
+
+        cout<<"1 "<<a[b]<<endl;
+
+        cout<<t - 2<<" ";
+
+        for(int i = 0; i < t; i++)
+        {
+            if( i == b || i == c)
+                continue;
+
+            cout<<a[i]<<" ";
+        }
+    }
+    else
+    {
+        cout<<"1 "<<a[c]<<endl;
+
+        cout<<"2 ";
+
+        s = 0;
+
+        for(int i = 0; i < t; i++)
+        {
+            if(a[i] < 0 && i != c)
+            {
+                cout<<a[i]<<" ";
+
+                a[i] = 10000;
+
+                s++;
+            }
+
+            if( s == 2)
+                break;
+        }
+
+        cout<<endl;
+
+        cout<<t - 3<<" ";
+
+        for(int i = 0; i < t; i++)
+        {
+            if(i == c || a[i] == 10000)
+                continue;
+
+            cout<<a[i]<<" ";
+        }
+
+        cout<<endl;
+
+    }
+
+}
