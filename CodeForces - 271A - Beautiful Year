@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int m,a,b,c,d;
+
+    cin>>m;
+
+    while(1)
+    {
+        m++;
+
+        int k = m;
+
+        a = k % 10;
+
+        k /= 10;
+
+        b = k % 10;
+
+        k /= 10;
+
+        c = k % 10;
+
+        k /= 10;
+
+        d = k;
+
+        if (a != b && a != c && a != d && b != c && b != d && c != d)
+        {
+            cout<<m<<endl;
+            break;
+        }
+    }
+
+}
