@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    vector<int> v;
+
+    int t,a,b;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>a;
+
+        v.push_back(a);
+    }
+
+    sort(v.begin(), v.end());
+
+    b = v.size() - 1;
+
+    for(int i = b; i > 1; i--)
+    {
+        if(v[i-2] + v[i - 1] > v[i])
+        {
+            cout<<"YES"<<endl;
+            return 0;
+        }
+    }
+
+    cout<<"NO"<<endl;
+
+
+    return 0;
+
+}
