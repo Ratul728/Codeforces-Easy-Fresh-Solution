@@ -1,0 +1,83 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b;
+
+    vector<string> v;
+
+    v.push_back("zero");
+    v.push_back("one");
+    v.push_back("two");
+    v.push_back("three");
+    v.push_back("four");
+    v.push_back("five");
+    v.push_back("six");
+    v.push_back("seven");
+    v.push_back("eight");
+    v.push_back("nine");
+    v.push_back("ten");
+    v.push_back("eleven");
+    v.push_back("twelve");
+    v.push_back("thirteen");
+    v.push_back("fourteen");
+    v.push_back("fifteen");
+    v.push_back("sixteen");
+    v.push_back("seventeen");
+    v.push_back("eighteen");
+    v.push_back("nineteen");
+    v.push_back("twenty");
+
+    for(int i = 21; i < 100; i++)
+        v.push_back("negetive");
+
+    v[30] = "thirty";
+    v[40] = "forty";
+    v[50] = "fifty";
+    v[60] = "sixty";
+    v[70] = "seventy";
+    v[80] = "eighty";
+    v[90] = "ninety";
+
+    cin>>a;
+
+    if(a < 21 || a % 10 == 0)
+    {
+        cout<<v[a]<<endl;
+    }
+    else if(a < 30)
+    {
+        cout<<v[20]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 40)
+    {
+        cout<<v[30]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 50)
+    {
+        cout<<v[40]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 60)
+    {
+        cout<<v[50]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 70)
+    {
+        cout<<v[60]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 80)
+    {
+        cout<<v[70]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 90)
+    {
+        cout<<v[80]<<"-"<<v[a % 10]<<endl;
+    }
+    else if(a < 100)
+    {
+        cout<<v[90]<<"-"<<v[a % 10]<<endl;
+    }
+
+}
