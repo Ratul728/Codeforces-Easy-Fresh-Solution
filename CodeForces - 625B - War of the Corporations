@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s,ss;
+
+    int i,j,k, cnt = 0;
+    bool b;
+
+    cin>>s>>ss;
+
+    for(i = 0; i < s.size(); i++)
+    {
+        k = 0;
+        b = true;
+
+        if(s[i] == ss[k])
+        {
+            //printf("s[%d] = %c,  ss[%d] = %c\n",i, s[i],k,ss[k]);
+
+            for(j = i + 1; j < s.size() && k < ss.size() - 1;j++)
+            {
+                k++;
+                //printf("s[%d] = %c,  ss[%d] = %c\n",j, s[j],k,ss[k]);
+                if(s[j] != ss[k])
+                {
+                    //printf("s[%d] = %c,  ss[%d] = %c\n",j, s[j],k,s[k]);
+                    b = false;
+                }
+            }
+
+            if(b && k == ss.size()-1 && s[j-1] == ss[ss.size()-1])
+            {
+                cnt++;
+                i += ss.size()-1;
+            }
+        }
+    }
+
+    cout<<cnt<<endl;
+}
