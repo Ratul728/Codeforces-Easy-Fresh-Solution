@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+
+    int t,i;
+    string st;
+
+    //while(t--)
+    //{
+        stack<char> s;
+
+        getline(cin,st);
+        int cnt = 0;
+
+        for(i = 0; i < st.size(); i++)
+        {
+            if(st[i] == ')' && !s.empty())
+            {
+                if(s.top() == '(')
+                {
+                    cnt++;
+                    s.pop();
+                }
+            }
+            else
+                s.push(st[i]);
+        }
+
+        cout<<cnt*2<<endl;
+    //}
+}
