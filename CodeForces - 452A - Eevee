@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+
+    string s;
+
+    cin>>t>>s;
+
+    if(t == 8)
+        cout<<"vaporeon"<<endl;
+
+    else if(t == 6)
+        cout<<"espeon"<<endl;
+
+    else if(s[0] == 'j' || s[1] == 'o' || s[3] == 't')
+        cout<<"jolteon"<<endl;
+
+    else if(s[0] == 's' || s[1] == 'y' || s[3] == 'v')
+        cout<<"sylveon"<<endl;
+
+    else if(s[0] == 'g' || s[3] == 'c')
+        cout<<"glaceon"<<endl;
+
+    else if(s[0] == 'u' || s[1] == 'm' || s[2] == 'b')
+        cout<<"umbreon"<<endl;
+
+    else if(s[0] == 'l' || s[1] == 'e' || s[3] == 'f')
+        cout<<"leafeon"<<endl;
+
+    else
+        cout<<"flareon"<<endl;
+}
