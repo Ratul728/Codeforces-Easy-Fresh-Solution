@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,d;
+
+    list<int> l;
+    list<int> :: iterator it;
+
+    vector<int> v;
+
+    cin>>a;
+
+    for(int i = 1; i < 1001; i++)
+    {
+        b = i;
+
+        d = v.size();
+
+        while(b)
+        {
+            c = b % 10;
+
+            l.push_back(c);
+
+            b = b / 10;
+        }
+
+        l.reverse();
+
+        for(it = l.begin(); it != l.end(); it++)
+            v.push_back(*it);
+
+        if(v.size() >= a)
+        {
+            cout<<v[a-1]<<endl;
+            break;
+        }
+
+        l.clear();
+
+    }
+
+}
