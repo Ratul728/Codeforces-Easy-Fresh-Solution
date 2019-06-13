@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    int n,m,a,b,i,t,x,y;
+
+    cin>>x>>y;
+
+    cin>>a>>b;
+
+    if(x > a)
+        m = x - a;
+    else
+        m = a - x;
+
+    if(y > b)
+        n = y - b;
+    else
+        n = b - y;
+
+    t = max(m,n);
+
+    cout<<t<<endl;
+
+    return 0;
+
+}
