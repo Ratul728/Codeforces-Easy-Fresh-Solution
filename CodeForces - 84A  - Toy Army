@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    int a ,t , s = 0;
+
+    cin>>t;
+
+    a = t / 2;
+
+    while(a--)
+        s += 3;
+
+
+    cout<<s<<endl;
+
+
+
+
+    return 0;
+
+}
