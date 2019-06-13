@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main( )
+{
+    int u = 0,l = 1, t;
+
+    vector <char> v;
+
+    bool f;
+
+    string s;
+
+    cin>>t;
+
+    cin>>s;
+
+    transform(s.begin(), s.end(), s.begin(), :: tolower);
+
+
+    for(int i = 0; i < s.size(); i++)
+    {
+        f = true;
+
+        for(int j = 0; j < v.size(); j++)
+        {
+            if(s[i] == v[j])
+                f = false;
+        }
+
+        if(f)
+            v.push_back(s[i]);
+    }
+
+    if(v.size() == 26)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+
+
+    v.clear();
+}
