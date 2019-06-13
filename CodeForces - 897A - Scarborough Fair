@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,m,l,r;
+    char c1, c2;
+
+    string a;
+
+     cin>>n>>m;
+
+    cin>>a;
+
+    while(m--)
+    {
+        cin>>l>>r>>c1>>c2;
+
+        for(int i = l - 1; i <= r - 1; i++)
+        {
+            if(a[i] == c1)
+                a[i] = c2;
+        }
+    }
+
+    cout<<a<<endl;
+
+}
